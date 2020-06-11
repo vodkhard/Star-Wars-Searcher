@@ -12,18 +12,24 @@ const Details = () => {
   }, []);
 
   return (
-    <div>
-      <h2>
-        {resource}: {data.name}
-      </h2>
-      {loading && <ClimbingBoxLoader color="#fff" />}
+    <section>
+      <header>
+        <h2>
+          {resource}: {data.name}
+        </h2>
+      </header>
       <aside>
+        {loading && <ClimbingBoxLoader color="#fff" />}
         {data &&
           Object.entries(data).map(([key, value]) =>
             Array.isArray(value) ? (
               <details key={key}>
                 <summary>{key}</summary>
-                <p>{value.map((v) => `${formatValue(v)}\n`)}</p>
+                <div>
+                  {value.map((v) => (
+                    <p key={v}>{formatValue(v)}</p>
+                  ))}
+                </div>
               </details>
             ) : (
               <div key={key}>
@@ -32,7 +38,7 @@ const Details = () => {
             )
           )}
       </aside>
-    </div>
+    </section>
   );
 };
 

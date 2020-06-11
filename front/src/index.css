@@ -3,6 +3,10 @@
   src: local('StarJedi'), url(./fonts/Starjedi.ttf) format('truetype');
 }
 
+:root {
+  --width-card-wide: 100%;
+}
+
 body {
   margin: 0;
   font-family: StarJedi, "Segoe UI", "Roboto", "Oxygen",

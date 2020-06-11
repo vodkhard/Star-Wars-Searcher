@@ -11,7 +11,7 @@ function App() {
     <Provider store={store}>
       <Router>
         <Audio />
-        <section>
+        <main>
           <header>
             <Link to="/">
               <h1>Star Wars Search</h1>
@@ -25,7 +25,7 @@ function App() {
               <Home />
             </Route>
           </Switch>
-        </section>
+        </main>
       </Router>
     </Provider>
   );
